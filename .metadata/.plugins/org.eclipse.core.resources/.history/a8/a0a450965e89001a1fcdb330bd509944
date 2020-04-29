@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login form</title>
+<link th:href="@{/resources/bootstrap/css/bootstrap.min.css}" rel="stylesheet" type="text/css">
+</head>
+
+<body class="container">
+
+    <div class="d-flex justify-content-center align-items-center">
+        <div layout:fragment="content"></div>
+    </div>
+
+    <script th:src="@{/resources/jquery/jquery.min.js}"></script>
+    <script src="@{/resources/bootstrap/js/bootstrap.min.js}"></script>
+    
+</body>
+
+</html>
