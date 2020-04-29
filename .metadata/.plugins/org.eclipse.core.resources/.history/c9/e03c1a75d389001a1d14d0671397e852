@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+
+<head th:replace="student/fragments/head.html"></head>
+
+<body class="container">
+    <!-- Just an image -->
+    <nav class="navbar navbar-light bg-light" th:replace="student/fragments/nav.html"></nav>
+
+    <div class="row">
+        <div layout:fragment="content">
+        
+        </div>         
+    </div>
+
+    <script th:src="@{/resources/jquery/jquery.min.js}"></script>
+    <script th:src="@{/resources/bootstrap/js/bootstrap.min.js}"></script>
+    <script th:src="@{/resources/js/jquery.twbsPagination.js}"></script>
+    <script>
+        $('#pagination-demo').twbsPagination({
+            totalPages: 12,
+            visiblePages: 5
+        });
+    </script>
+</body>
+
+</html>

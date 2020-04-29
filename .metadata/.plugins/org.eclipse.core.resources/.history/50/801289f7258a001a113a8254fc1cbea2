@@ -1,0 +1,24 @@
+package thai.util;
+
+import java.io.IOException;
+import java.io.Reader;
+
+import javax.annotation.Resource;
+
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.io.Resources;
+
+public class MyBatisUtil {
+
+	private static SqlSessionFactory sessionFactory;
+	
+	static {
+		Reader reader;
+		try {
+			reader = Resources.getResourceAsReader("thai/resources/mybatis_config.xml");
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

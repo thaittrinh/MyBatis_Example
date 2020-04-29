@@ -1,5 +1,6 @@
 
-<div xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="login_layout">
+<div xmlns:th="http://www.thymeleaf.org" 
+     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="login_layout">
 	<div layout:fragment="content" >
 	<form style="width: 400px; margin-top: 70px;"
 		class="border border-primary">
@@ -9,7 +10,7 @@
 			<br />
 			<div class="form-row">
 				<div class="form-group col-md-4">
-					<p style="font-size: 20px;">Username:</p>
+					<p style="font-size: 20px;">Username: </p>
 				</div>
 				<div class="form-group col-md-8">
 					<input type="text" class="form-control" id="inputUsername"
@@ -32,12 +33,14 @@
 					<button type="button" class="btn btn-secondary"
 						style="float: left; width: 90px;">Login</button>
 
-					<a th:href="@{register.html}"><button type="button"
+					<a th:href="@{/register}"><button type="button"
 							style="float: right; width: 90px;" class="btn btn-primary">Register</button></a>
 				</div>
 			</div>
 		</div>
 	</form>
+	<script th:src="@{/resources/jquery/jquery.min.js}"></script>
+	<script th:src="@{/resources/bootstrap/js/bootstrap.min.js}"></script>
 	</div>
 </div> 
  
