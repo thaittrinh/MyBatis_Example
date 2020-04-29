@@ -10,7 +10,7 @@
 	<description>spring mvc anh thymeleaf</description>
 
 	<properties>
-		<spring.version>5.0.2.RELEASE</spring.version>
+		<spring.version>5.0.16.RELEASE</spring.version>
 		<thymeleaf.version>3.0.9.RELEASE</thymeleaf.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
