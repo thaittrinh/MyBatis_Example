@@ -1,0 +1,59 @@
+
+<div xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="login_layout">
+	<div layout:fragment="content">
+		<form th:action="@{/register}" th:object="${User}" method="post"
+			style="width: 500px; margin-top: 70px;" class="border border-primary">
+			<div style="margin: 10px;">
+				<h3 style="text-align: center;">Register</h3>
+				<br />
+				<div class="form-row">
+					<div class="form-group col-md-4">
+						<p style="font-size: 18px;">Username:</p>
+					</div>
+					<div class="form-group col-md-8">
+						<input type="text" th:field="*{name}" class="form-control"
+							id="inputUsername" placeholder="Username">
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-4">
+						<p style="font-size: 18px;">Password:</p>
+					</div>
+					<div class="form-group col-md-8">
+						<input type="password" th:field="*{password}" class="form-control"
+							id="inputPassword" placeholder="Password">
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-4">
+						<p style="font-size: 18px;">Password confirm:</p>
+					</div>
+					<div class="form-group col-md-8">
+						<input name="confirmPassword" type="password" class="form-control"
+							id="confirmPassword" placeholder="Password">
+					</div>
+				</div>
+				<div class="form-row" th:if="${message !=null}">
+					<div class="form-group col-md-4"></div>
+					<div class="form-group col-md-8">
+						<p th:text="${message}" style="color: red; font-size: 13px;"></p>
+					</div>
+				</div>
+				<div class="form-row">
+					<div class="form-group col-md-4"></div>
+					<div class="form-group col-md-8">
+						<a th:href="@{/login}"><button type="button"
+								class="btn btn-secondary" style="float: left; width: 100px;">Back</button></a>
+
+						<button type="submit" style="float: right; width: 100px;"
+							class="btn btn-primary">Register</button>
+					</div>
+				</div>
+			</div>
+		</form>
+		<script th:src="@{/resources/jquery/jquery.min.js}"></script>
+		<script th:src="@{/resources/bootstrap/js/bootstrap.min.js}"></script>
+	</div>
+</div>

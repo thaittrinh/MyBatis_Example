@@ -1,0 +1,26 @@
+package thai.entity;
+
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+
+public class User {
+
+	private Integer id;
+
+
+	@Size(max = 20, message = "Over 20 characters")
+	private String name;
+
+	@NotBlank
+	@Size(min = 6, max = 20, message = "The length from 6 to 20 characters")
+	private String password;
+
+}

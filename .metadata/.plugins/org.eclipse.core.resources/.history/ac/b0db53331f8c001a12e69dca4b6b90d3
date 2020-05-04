@@ -1,0 +1,9 @@
+ <nav class="navbar navbar-light bg-light" xmlns:th="http://www.thymeleaf.org" >
+        <a class="navbar-brand" href="#">
+            <img th:src="@{/resources/images/admin_text.png}" style="float: left;" width="90" height="40" alt="">
+            <div>
+                <strong><em style="margin: 0;" th:text="${User}">Welcome Nguyễn Văn An</em></strong>
+                <a th:href="login.html"><i class="fa fa-sign-out"></i>Logout</a>
+            </div>
+        </a>
+ </nav>

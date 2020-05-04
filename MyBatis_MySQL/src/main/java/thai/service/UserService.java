@@ -14,8 +14,26 @@ public class UserService {
 	@Autowired
 	UserRepository userRepository;
 	
-	public List<User> finllAll(){
+	public List<User> findAll(){
 		
-		return userRepository.finllAll();
+		return userRepository.findAll();
+	}
+	
+	public User getOneByName(String name) {
+		
+		return userRepository.getOneByName(name);
+	}
+	
+	public boolean checkLogin(User user) {
+		User u = userRepository.getOneByName(user.getName());
+		if (u != null && user.getPassword().equals(u.getPassword()) ) {
+			return true;
+		}
+		return false;
+	}
+	
+	public boolean register(User user) {
+		
+		return userRepository.insertUser(user);
 	}
 }

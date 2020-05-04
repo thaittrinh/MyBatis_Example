@@ -4,8 +4,8 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="user">
-    <insert id="insertUser" parameterType="User" >
-        
+    <insert id="insertUser" parameterType="User" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO USER(user_name, password) VALUES(#{name}, #{password});
     </insert>
  
     <update id="updateUser" parameterType="User">
@@ -17,14 +17,14 @@
     </delete>
      
     <select id="selectAllUser" resultMap="result">
-       SELECT * FROM USER
+       SELECT * FROM USER;
     </select>
      
-    <select id="selectUserById" parameterType="int" resultType="Student">
-       
+    <select id="selectUserByName" parameterType="String" resultType="User" resultMap="result">
+       SELECT * FROM USER WHERE USER_NAME = #{name};
     </select>
      
-    <resultMap id = "result" type = "user">
+    <resultMap id = "result" type = "User">
        <result property = "id" column = "user_id"/>
        <result property = "name" column = "user_name"/>
        <result property = "password" column = "password"/> 

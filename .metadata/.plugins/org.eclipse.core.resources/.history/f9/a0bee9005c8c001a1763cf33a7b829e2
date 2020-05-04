@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+encoding//src/main/java/thai/controller/LoginController.java=UTF-8
+encoding//src/main/java/thai/repository/UserRepository.java=UTF-8
+encoding//src/main/webapp/WEB-INF/views/login/login.html=UTF-8
+encoding//src/main/webapp/WEB-INF/views/login/register.html=UTF-8
+encoding//src/main/webapp/WEB-INF/views/student/fragments/nav.html=UTF-8
+encoding//src/main/webapp/WEB-INF/views/student/students.html=UTF-8
