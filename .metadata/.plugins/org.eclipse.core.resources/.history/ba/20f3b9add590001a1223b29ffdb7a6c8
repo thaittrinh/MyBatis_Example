@@ -1,0 +1,26 @@
+package thai.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import thai.dto.PageDTO;
+import thai.dto.SortBy;
+import thai.dto.StudentDTO;
+import thai.repository.StudentDetailRepository;
+
+@Service
+public class StudentDetailService {
+
+	@Autowired
+	StudentDetailRepository studentDetailRepository;
+	
+	public List<StudentDTO> findAll(PageDTO pageDTO){
+		
+		pageDTO.setSort(SortBy.STUDENT_NAME);
+		pageDTO.setStartPage(0);
+		
+		return studentDetailRepository.findALL(pageDTO);
+	}
+}

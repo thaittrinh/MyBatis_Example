@@ -1,0 +1,34 @@
+package thai.repository;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import org.apache.ibatis.session.SqlSession;
+
+import thai.dto.StudentDTO;
+import thai.util.MyBatisUtil;
+
+@Repository
+public class StudentDetail {
+
+	SqlSession session;
+
+	public List<StudentDTO> findALL() {
+		List<StudentDTO> StudentDTOs;
+
+		try {
+
+			session = MyBatisUtil.getSqlSessionFactory().openSession();
+			StudentDTOs = session.selectList("UselectStudentDetail");
+			session.commit();
+		} catch (Exception e) {
+			StudentDTOs = null;
+			throw new RuntimeException();
+		} finally {
+			session.close();
+		}
+
+		return StudentDTOs;
+	}
+}

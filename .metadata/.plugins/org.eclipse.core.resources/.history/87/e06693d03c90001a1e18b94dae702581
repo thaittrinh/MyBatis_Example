@@ -1,0 +1,5 @@
+package thai.repository;
+
+public class StudentDetail {
+
+}

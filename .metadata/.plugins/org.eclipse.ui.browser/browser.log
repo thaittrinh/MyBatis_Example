@@ -1,0 +1,29 @@
+
+May 05, 2020 14:44:56.79 NEW SESSION
+May 05, 2020 14:44:56.79 [3556:7248:0505/144456.793:ERROR:browser_switcher_service.cc(238)] XXX Init()
+May 05, 2020 14:44:58.57 [3556:5960:0505/144458.570:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106
+May 05, 2020 14:45:21.17 [3556:5960:0505/144521.175:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106
+May 05, 2020 14:46:04.63 [3556:5960:0505/144604.639:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106
+May 05, 2020 14:47:33.85 [3556:5960:0505/144733.856:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106
+May 05, 2020 14:51:19.49 [3556:5960:0505/145119.493:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106
+May 05, 2020 14:58:46.34 [3556:5960:0505/145846.346:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106
+May 05, 2020 15:07:21.20 [3556:5960:0505/150721.200:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106
+May 05, 2020 15:18:42.86 [3556:5960:0505/151842.859:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106
+May 05, 2020 15:19:12.47 [3556:5960:0505/151912.474:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106
+May 05, 2020 15:20:01.69 [3556:5960:0505/152001.696:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106
+May 05, 2020 15:21:12.38 [3556:12740:0505/152112.386:ERROR:get_updates_processor.cc(258)] PostClientToServerMessage() failed during GetUpdates with error 2
+May 05, 2020 15:21:54.74 [3556:5960:0505/152154.740:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106
+May 05, 2020 15:24:19.39 [3556:12740:0505/152419.393:ERROR:get_updates_processor.cc(258)] PostClientToServerMessage() failed during GetUpdates with error 2
+May 05, 2020 15:24:52.43 [3556:5960:0505/152452.434:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106
+May 05, 2020 15:27:28.79 [3556:7248:0505/152728.793:ERROR:account_info_fetcher.cc(60)] OnGetTokenFailure: Connection failed (-106).
+May 05, 2020 15:27:29.01 [3556:7248:0505/152729.014:ERROR:account_info_fetcher.cc(60)] OnGetTokenFailure: Connection failed (-106).
+May 05, 2020 15:27:30.71 [3556:7248:0505/152730.712:ERROR:account_info_fetcher.cc(60)] OnGetTokenFailure: Connection failed (-106).
+May 05, 2020 15:32:06.40 [3556:12740:0505/153206.401:ERROR:get_updates_processor.cc(258)] PostClientToServerMessage() failed during GetUpdates with error 2
+
+May 08, 2020 20:05:09.90 NEW SESSION
+May 08, 2020 20:05:09.90 [484:13176:0508/200509.898:ERROR:browser_switcher_service.cc(238)] XXX Init()
+May 08, 2020 20:05:15.72 [484:14324:0508/200515.728:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106
+May 08, 2020 20:05:40.59 [484:14324:0508/200540.596:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106
+May 08, 2020 20:06:37.36 [484:14324:0508/200637.362:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106
+May 08, 2020 20:08:17.51 [484:14324:0508/200817.516:ERROR:connection_factory_impl.cc(420)] Failed to connect to MCS endpoint with error -106
+May 08, 2020 20:23:53.64 [484:13176:0508/202353.644:ERROR:startup_browser_creator.cc(384)] launch error

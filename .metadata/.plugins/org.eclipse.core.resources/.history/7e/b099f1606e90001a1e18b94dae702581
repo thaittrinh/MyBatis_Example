@@ -1,0 +1,24 @@
+package thai.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class PageDTO {
+	
+	private String code;
+	
+	private String name;
+	
+	private Enum<SortBy> sort;
+	
+	private int startPage;
+	
+	private int item;
+	
+
+}

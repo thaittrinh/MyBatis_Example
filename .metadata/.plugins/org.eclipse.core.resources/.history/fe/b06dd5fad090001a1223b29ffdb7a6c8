@@ -1,0 +1,103 @@
+<div xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="student_layout">
+	<div layout:fragment="content">
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8">
+			<form th:action="@{/students}" th:object="${Student}" method="GET">
+				<div style="margin: 10px;">
+					<br />
+					<div class="form-row">
+						<div class="form-group col-md-3">
+							<lable>
+							<strong style="font-size: 17px;">Student code:</strong></lable>
+						</div>
+						<div class="form-group col-md-6">
+							<input type="text" class="form-control" id="inputUsername"
+								th:field="*{code}" placeholder="Student code">
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="form-group col-md-3">
+							<lable>
+							<strong style="font-size: 17px;">Student name:</strong></lable>
+						</div>
+						<div class="form-group col-md-6">
+							<input type="text" class="form-control" id="inputPassword"
+								th:field="*{name}" placeholder="Password">
+						</div>
+						<div class="form-group col-md-3">
+							<button type="button" class="btn btn-secondary"
+								style="width: 107.27px;">Search</button>
+						</div>
+					</div>
+					<div class="form-row">
+						<div class="form-group col-md-3">
+							<lable>
+							<strong style="font-size: 17px;">Birthday:</strong></lable>
+						</div>
+						<div class="form-group col-md-6">
+							<input type="date" class="form-control" id="inputPassword"
+								placeholder="Password">
+						</div>
+						<div class="form-group col-md-3">
+							<a href="student.html"><button type="button"
+									class="btn btn-primary">Add Student</button></a>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="col-sm-2"></div>
+
+		<br>
+		<table class="col-sm-12" border="1">
+			<thead>
+				<tr>
+					<th><i class="fa fa-caret-down"></i>No</th>
+					<th><i class="fa fa-caret-down"></i>Code</th>
+					<th><i class="fa fa-caret-down"></i>Name</th>
+					<th><i class="fa fa-caret-down"></i>Brithday</th>
+					<th><i class="fa fa-caret-down"></i>Address</th>
+					<th><i class="fa fa-caret-down"></i>Average</th>
+					<th>Update</th>
+					<th>Delete</th>
+				</tr>
+			</thead>
+			<tbody>
+		  
+				<tr th:each ="Student : ${Students}">
+					<td>1</td>
+					<td th:text="${Student.code}">PS08530</td>
+					<td th:text="${Student.name}">Trịnh Trọng Thái</td>
+					<td th:text="${Student.birthday}">19/08/2000</td>
+					<td th:text="${Student.address}">Thanh Hóa</td>
+					<td th:text="${Student.average}">7.8</td>
+					<td><button style="width: 100%;" type="button">Update</button></td>
+					<td><button style="width: 100%;" type="button">Delete</button></td>
+				</tr>
+		
+			</tbody>
+		</table>
+
+		<div style="margin-top: 20px;"
+			class="row mx-auto justify-content-center align-items-center flex-column ">
+			<ul style="font-size: 15px;" id="pagination-demo"
+				class="pagination-md"></ul>
+		</div>
+
+
+		<script th:src="@{/resources/jquery/jquery.min.js}"></script>
+		<script th:src="@{/resources/bootstrap/js/bootstrap.min.js}"></script>
+		<script th:src="@{/resources/js/jquery.twbsPagination.js}"></script>
+		<script>
+			$('#pagination-demo').twbsPagination({
+				totalPages : 12,
+				visiblePages : 5
+			});
+		</script>
+
+
+	</div>
+
+</div>

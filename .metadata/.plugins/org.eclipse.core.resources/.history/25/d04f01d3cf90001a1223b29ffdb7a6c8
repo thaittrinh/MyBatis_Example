@@ -1,0 +1,38 @@
+package thai.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import thai.service.StudentDetailService;
+
+@Controller
+public class StudentController {
+	
+	@Autowired
+	StudentDetailService studentDetailService;
+	
+	 @GetMapping("/students")
+	  public ModelAndView students() {
+		 
+		 ModelAndView mav = new ModelAndView();
+		 		 		
+		 mav.addObject("Students", studentDetailService.findAll());
+		 mav.setViewName("student/students"); 
+		 
+		 return mav ;
+	 }
+	
+	 
+	 
+	 @RequestMapping("/student")
+	  public String student() {
+		 
+		 return "student/student";
+	 }
+	
+
+	
+}

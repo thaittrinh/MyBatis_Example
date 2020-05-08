@@ -1,0 +1,5 @@
+package thai.dto;
+
+public enum SortBy {
+
+}

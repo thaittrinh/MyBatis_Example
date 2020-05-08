@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="StudentDetail">
+	<select id="selectStudentDetail" parameterType="thai.dto.PageDTO" resultMap="result" >
+		SELECT S.*, SIF.ADDRESS AS ADDRESS, SIF.AVERAGE_SCORE AS AVERAGE_SCORE,
+		SIF.DATE_OF_BIRTH AS DATE_OF_BIRTH
+		<!--  DATE_FORMAT(SIF.DATE_OF_BIRTH,'%Y/%m/%d') AS DATE_OF_BIRTH-->
+		FROM STUDENT S, STUDENT_INFO SIF
+		WHERE S.STUDENT_ID = SIF.STUDENT_ID
+	    AND S.STUDENT_NAME LIKE N'%${name}%'
+	    AND S.STUDENT_CODE LIKE '%${code}%'	
+		ORDER BY ${sort}
+		LIMIT ${startItem},${items};
+	</select>
+
+	<select id="countRow" parameterType="thai.dto.PageDTO" resultType="int" >
+
+		SELECT COUNT(S.STUDENT_ID)
+		FROM STUDENT S, STUDENT_INFO SIF
+		WHERE S.STUDENT_ID = SIF.STUDENT_ID
+	    AND S.STUDENT_NAME LIKE N'%${name}%'
+	    AND S.STUDENT_CODE LIKE '%${code}%'
+		
+	</select>
+
+
+	<resultMap id="result" type="StudentDetail">
+		<result property="name" column="student_name" />	
+		<result property="code" column="student_code" />
+		<result property="id" column="student_id" />	
+		<result property="address" column="address" />
+		<result property="average" column="average_score" />
+		<result property="birthday" column="date_of_birth" />	
+	</resultMap>
+	
+</mapper>

@@ -4,7 +4,7 @@
 	<div layout:fragment="content">
 		<div class="col-sm-2"></div>
 		<div class="col-sm-8">
-			<form>
+			<form th:action="@{/search}" th:object="${PageDTO}" method="GET">
 				<div style="margin: 10px;">
 					<br />
 					<div class="form-row">
@@ -14,7 +14,12 @@
 						</div>
 						<div class="form-group col-md-6">
 							<input type="text" class="form-control" id="inputUsername"
-								placeholder="Username">
+								th:field="*{code}" placeholder="Student code">
+								
+							<!-- hidden 
+							<input type="text" th:field="*{items}"  value="10" hidden=true>
+							<input type="text" th:field="*{startPage}"  value="10" hidden=true>
+				-->
 						</div>
 					</div>
 					<div class="form-row">
@@ -23,11 +28,11 @@
 							<strong style="font-size: 17px;">Student name:</strong></lable>
 						</div>
 						<div class="form-group col-md-6">
-							<input type="password" class="form-control" id="inputPassword"
-								placeholder="Password">
+							<input type="text" class="form-control" id="inputName"
+								th:field="*{name}" placeholder="name">
 						</div>
 						<div class="form-group col-md-3">
-							<button type="button" class="btn btn-secondary"
+							<button type="submit" class="btn btn-secondary"
 								style="width: 107.27px;">Search</button>
 						</div>
 					</div>
@@ -37,8 +42,8 @@
 							<strong style="font-size: 17px;">Birthday:</strong></lable>
 						</div>
 						<div class="form-group col-md-6">
-							<input type="password" class="form-control" id="inputPassword"
-								placeholder="Password">
+							<input type="text" class="form-control" id="inputDate"
+							 name ="br" placeholder="Password">
 						</div>
 						<div class="form-group col-md-3">
 							<a href="student.html"><button type="button"
@@ -55,43 +60,28 @@
 			<thead>
 				<tr>
 					<th><i class="fa fa-caret-down"></i>No</th>
-					<th><i class="fa fa-caret-down"></i>Code</th>
-					<th><i class="fa fa-caret-down"></i>Name</th>
-					<th><i class="fa fa-caret-down"></i>Brithday</th>
-					<th><i class="fa fa-caret-down"></i>Address</th>
+					<th><a th:href="@{/sort/STUDENT_CODE}" style="color:black;"><i class="fa fa-caret-down"></i>Code</a></th>
+					<th><a th:href="@{/sort/STUDENT_NAME}" style="color:black;"><i class="fa fa-caret-down"></i>Name</a></th>
+					<th><a th:href="@{/sort/DATE_OF_BIRTH}" style="color:black;"><i class="fa fa-caret-down"></i>Brithday</a></th>
+					<th><a th:href="@{/sort/ADDRESS}" style="color:black;"><i class="fa fa-caret-down"></i>Address</a></th>
+					<th><a th:href="@{/sort/AVERAGE_SCORE}" style="color:black;"><i class="fa fa-caret-down"></i>Average</a></th>
 					<th>Update</th>
 					<th>Delete</th>
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
+		  
+				<tr th:each ="Student : ${Students}">
 					<td>1</td>
-					<td>PS08530</td>
-					<td>Trịnh Trọng Thái</td>
-					<td>19/08/2000</td>
-					<td>Thanh Hóa</td>
-					<td><button style="width: 100%;" type="button">Update</button></td>
-					<td><button style="width: 100%;" type="button">Delete</button></td>
-
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>PS08530</td>
-					<td>Trịnh Trọng Thái</td>
-					<td>19/08/2000</td>
-					<td>Thanh Hóa</td>
+					<td th:text="${Student.code}">PS08530</td>
+					<td th:text="${Student.name}">Trịnh Trọng Thái</td>
+					<td th:text="${Student.birthday}">19/08/2000</td>
+					<td th:text="${Student.address}">Thanh Hóa</td>
+					<td th:text="${Student.average}">7.8</td>
 					<td><button style="width: 100%;" type="button">Update</button></td>
 					<td><button style="width: 100%;" type="button">Delete</button></td>
 				</tr>
-				<tr>
-					<td>1</td>
-					<td>PS08530</td>
-					<td>Trịnh Trọng Thái</td>
-					<td>19/08/2000</td>
-					<td>Thanh Hóa</td>
-					<td><button style="width: 100%;" type="button">Update</button></td>
-					<td><button style="width: 100%;" type="button">Delete</button></td>
-				</tr>
+		
 			</tbody>
 		</table>
 
@@ -105,11 +95,16 @@
 		<script th:src="@{/resources/jquery/jquery.min.js}"></script>
 		<script th:src="@{/resources/bootstrap/js/bootstrap.min.js}"></script>
 		<script th:src="@{/resources/js/jquery.twbsPagination.js}"></script>
-		<script>
+		<script>	
+		const contextPath = [[@{'/'}]];
 			$('#pagination-demo').twbsPagination({
-				totalPages : 12,
-				visiblePages : 5
-			});
+				totalPages : [[${totalPage}]],
+				visiblePages : 5,
+				startPage: [[${startPage}]],
+				hideOnlyOnePage: true,
+			}).on('page', function(event, page) {
+				window.location.href= contextPath + "page/"+page;
+	        });
 		</script>
 
 

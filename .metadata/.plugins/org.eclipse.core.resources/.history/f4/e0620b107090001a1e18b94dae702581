@@ -1,0 +1,62 @@
+package thai.repository;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.stereotype.Repository;
+
+import thai.dto.PageDTO;
+import thai.dto.SortBy;
+import thai.dto.StudentDTO;
+import thai.util.MyBatisUtil;
+
+@Repository
+public class StudentDetailRepository {
+
+	SqlSession session;
+
+	public List<StudentDTO> findALL() {
+		List<StudentDTO> StudentDTOs;
+		PageDTO pageDTO = new PageDTO();
+		pageDTO.setName("");
+		pageDTO.setCode("PS0853");
+		pageDTO.setSort(SortBy.STUDENT_NAME);
+		pageDTO.setStartPage(0);
+		try {
+
+			session = MyBatisUtil.getSqlSessionFactory().openSession();
+			StudentDTOs = session.selectList("StudentDetail.selectStudentDetail", pageDTO);
+			session.commit();
+		} catch (Exception e) {
+			StudentDTOs = null;
+			e.printStackTrace();
+		} finally {
+
+			session.close();
+		}
+		
+		totalStudent();
+		
+		return StudentDTOs;
+	}
+
+	
+	public int totalStudent() {
+		
+		int row;
+		
+		try {
+			session = MyBatisUtil.getSqlSessionFactory().openSession();
+			row = session.selectOne("StudentDetail.countRow");
+			session.commit();
+		} catch (Exception e) {
+			row = 0;
+			e.printStackTrace();
+		} finally {
+
+			session.close();
+		}
+		
+		return row;
+	}
+}

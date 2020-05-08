@@ -1,0 +1,49 @@
+package thai.controller;
+
+import java.util.Date;
+
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import thai.dto.PageDTO;
+import thai.service.StudentDetailService;
+
+@Controller
+public class StudentController {
+	
+	@Autowired
+	StudentDetailService studentDetailService;
+	
+	 @GetMapping("/students")
+	  public ModelAndView students(HttpSession session,
+			  			@ModelAttribute("PageDTO") PageDTO pageDTO,
+			  			@RequestParam("br") Date date) {
+		 
+		 System.out.println(date);
+		 
+		 ModelAndView mav = new ModelAndView();
+		 		 		
+		 mav.addObject("Students", studentDetailService.findAll(pageDTO));
+		 mav.setViewName("student/students"); 
+		 
+		 return mav ;
+	 }
+	
+	 
+	 
+	 @RequestMapping("/student")
+	  public String student() {
+		 
+		 return "student/student";
+	 }
+	
+
+	
+}

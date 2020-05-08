@@ -1,0 +1,5 @@
+package thai.dto;
+
+public class PageDTO {
+
+}

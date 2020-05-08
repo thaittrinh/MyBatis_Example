@@ -1,0 +1,17 @@
+package thai.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+public class StudentDTO {
+
+	private id;
+	
+	private name;
+	
+	private code;
+	
+}

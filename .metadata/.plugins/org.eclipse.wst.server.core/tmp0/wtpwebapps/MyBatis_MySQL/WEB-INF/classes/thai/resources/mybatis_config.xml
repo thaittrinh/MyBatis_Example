@@ -5,9 +5,11 @@
 <configuration>
 
   <typeAliases>
-     <typeAlias type="thai.entity.User" alias="user"/>
-     <typeAlias type="thai.entity.Student" alias="student"/>
-     <typeAlias type="thai.entity.StudentInfo" alias="student_info"/>
+     <typeAlias type="thai.entity.User" alias="User"/>
+     <typeAlias type="thai.entity.Student" alias="Student"/>
+     <typeAlias type="thai.entity.StudentInfo" alias="Student_Info"/>
+      <typeAlias type="thai.dto.PageDTO" alias="page"/>
+       <typeAlias type="thai.dto.StudentDTO" alias="StudentDetail"/>
   </typeAliases>  
   
   <environments default="development">
@@ -24,6 +26,7 @@
   
   <mappers>
     <mapper resource="thai/dao/User.xml" />
+    <mapper resource="thai/dao/Student_StudentInfo.xml" />
   </mappers>
   
 </configuration> 

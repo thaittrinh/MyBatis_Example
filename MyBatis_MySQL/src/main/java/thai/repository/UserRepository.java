@@ -18,13 +18,13 @@ public class UserRepository {
 		List<User> users = null;
 		try {
 			session = MyBatisUtil.getSqlSessionFactory().openSession();
-			users = session.selectList("selectAllUser");
+			users = session.selectList("User.selectAllUser");
 			session.commit();
 		} catch (Exception e) {		
 			throw new RuntimeException();
 		}finally {
 			session.close();
-		}	session = MyBatisUtil.getSqlSessionFactory().openSession();
+		}	
 		return users;	
 	}
 	
@@ -32,11 +32,13 @@ public class UserRepository {
 	public User getOneByName(String name) {
 		User user = null;
 		try {
+			
 			session = MyBatisUtil.getSqlSessionFactory().openSession();
-			user = session.selectOne("selectUserByName", name);
-			session.commit();
+			user = session.selectOne("User.selectUserByName", name);
+			session.commit();		
 		} catch (Exception e) {
-			throw new RuntimeException();
+			
+			e.printStackTrace();
 		}finally {
 			session.close();
 		}
@@ -47,7 +49,7 @@ public class UserRepository {
 	public boolean insertUser(User user) {
 		try {
 			session = MyBatisUtil.getSqlSessionFactory().openSession();
-			session.insert("insertUser", user);
+			session.insert("User.insertUser", user);
 			session.commit();
 			
 			return true;

@@ -1,0 +1,12 @@
+package thai.dto;
+
+
+public class StudentDTO {
+
+	private id;
+	
+	private name;
+	
+	private code;
+	
+}
