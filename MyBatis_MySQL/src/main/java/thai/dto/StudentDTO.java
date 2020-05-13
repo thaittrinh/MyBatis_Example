@@ -22,7 +22,7 @@ public class StudentDTO {
 	
 	private String code;
 	
-	@DateTimeFormat(pattern = "YYYY/MM/dd")
+	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	private Date birthday;
 	
 	private String address;

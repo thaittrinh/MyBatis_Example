@@ -6,7 +6,9 @@
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
+		<item key="selection" value="webAppContextSetup"/>
 		<list key="findhistory">
+			<item value="get"/>
 		</list>
 		<list key="replacehistory">
 		</list>

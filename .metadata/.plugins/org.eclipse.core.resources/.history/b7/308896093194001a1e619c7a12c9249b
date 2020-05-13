@@ -1,0 +1,38 @@
+package controller;
+
+import org.junit.Assert;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
+
+import thai.controller.LoginController;
+import thai.entity.User;
+import thai.service.UserService;
+
+@Test
+@RunWith(MockitoJUnitRunner.class)
+public class LoginTest {
+	
+	@Mock
+	UserService userService;
+	
+	@InjectMocks
+	LoginController loginController;
+	
+	public void showformLoginTest(){
+	
+		Assert.assertEquals(loginController.formLogin().getViewName(), "login/login");
+	}
+	
+	public void checkLoginTest() { 
+		User user = new User();
+		user.setName("admin1");
+		user.setPassword("123456");
+	
+		when(userService.checkLogin(user)).thenReturn(true);
+	}
+
+	
+}

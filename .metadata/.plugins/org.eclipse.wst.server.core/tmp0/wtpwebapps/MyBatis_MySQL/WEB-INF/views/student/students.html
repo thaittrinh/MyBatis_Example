@@ -15,11 +15,6 @@
 						<div class="form-group col-md-6">
 							<input type="text" class="form-control" id="inputUsername"
 								th:field="*{code}" placeholder="Student code">
-								
-							<!-- hidden 
-							<input type="text" th:field="*{items}"  value="10" hidden=true>
-							<input type="text" th:field="*{startPage}"  value="10" hidden=true>
-				-->
 						</div>
 					</div>
 					<div class="form-row">
@@ -73,11 +68,11 @@
 		  
 				<tr th:each ="Student : ${Students}">
 					<td>1</td>
-					<td th:text="${Student.code}">PS08530</td>
-					<td th:text="${Student.name}">Trịnh Trọng Thái</td>
-					<td th:text="${Student.birthday}">19/08/2000</td>
-					<td th:text="${Student.address}">Thanh Hóa</td>
-					<td th:text="${Student.average}">7.8</td>
+					<td th:text="${Student.code}"></td>
+					<td th:text="${Student.name}"></td>
+					<td th:text="${#dates.format(Student.birthday, 'dd-MM-yyyy')}"></td>
+					<td th:text="${Student.address}"></td>
+					<td th:text="${Student.average}"></td>
 					<td><button style="width: 100%;" type="button">Update</button></td>
 					<td><button style="width: 100%;" type="button">Delete</button></td>
 				</tr>

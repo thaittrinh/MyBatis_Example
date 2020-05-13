@@ -1,0 +1,5 @@
+package thai.filter;
+
+public class CORSFilter {
+
+}
